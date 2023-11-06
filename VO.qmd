@@ -86,11 +86,19 @@ ChArUco board are seen at the start and the end of testing videos, i.e. we will 
 ===================================================================================
 
 
-## Evaluation on Monocular Sequences
-
 ## Notes on the results
 
 - Although, ORB-SLAM3 fails tracking in most cases, although ORB-SLAM3 has a lot of features that can be inherited into AIR-VO as loop closing, and old points regonition.
 - ORB-SLAM3 is scalable to other sensors and configurations. Their code is pretty clean, but would be hard to change core components of it, as the feature extractor.
 - On the other hand, AIR-VO is only an odometry but performs robustly on these sequences, and in presense of challenges in visual odometry.
 - We refactored the code of AIR-VO to support mono tracking, and even multi Camera setting (In progress) with fixed bugs. 
+
+
+## Evaluation on Monocular Sequences
+In general, Monocular tracking is less robust than stereo tracking.
+On these sequences, ORB-SLAM3 on Monocular settings fails to track on all sequences. 
+AIR_VO doesn't support mono tracking, but we modified the code so that we have monocular tracking on it. 
+We have tested our modified VO on grabes sequences outdoors and on EuRoC benchmark, It showed acceptable performance.
+But on these sequence we face a scale drift issue on rotations (Debugging in progress!).
+
+![Scale drift issue on sequence 1 of our modified VO on Monocular settings](meta/scale_issue.jpg){width=720 height=640}

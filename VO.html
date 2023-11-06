@@ -324,9 +324,6 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>===================================================================================</p>
 </section>
-<section id="evaluation-on-monocular-sequences" class="level2">
-<h2 class="anchored" data-anchor-id="evaluation-on-monocular-sequences">Evaluation on Monocular Sequences</h2>
-</section>
 <section id="notes-on-the-results" class="level2">
 <h2 class="anchored" data-anchor-id="notes-on-the-results">Notes on the results</h2>
 <ul>
@@ -335,6 +332,16 @@ ul.task-list li input[type="checkbox"] {
 <li>On the other hand, AIR-VO is only an odometry but performs robustly on these sequences, and in presense of challenges in visual odometry.</li>
 <li>We refactored the code of AIR-VO to support mono tracking, and even multi Camera setting (In progress) with fixed bugs.</li>
 </ul>
+</section>
+<section id="evaluation-on-monocular-sequences" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation-on-monocular-sequences">Evaluation on Monocular Sequences</h2>
+<p>In general, Monocular tracking is less robust than stereo tracking. On these sequences, ORB-SLAM3 on Monocular settings fails to track on all sequences. AIR_VO doesn’t support mono tracking, but we modified the code so that we have monocular tracking on it. We have tested our modified VO on grabes sequences outdoors and on EuRoC benchmark, It showed acceptable performance. But on these sequence we face a scale drift issue on rotations (Debugging in progress!).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="meta/scale_issue.jpg" width="720" height="640" class="figure-img"></p>
+<figcaption class="figure-caption">Scale drift issue on sequence 1 of our modified VO on Monocular settings</figcaption>
+</figure>
+</div>
 </section>
 
 </main>
