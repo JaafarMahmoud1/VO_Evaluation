@@ -24,18 +24,38 @@ ChArUco board are seen at the start and the end of testing videos, i.e. we will 
 - **ORB-SLAM3 odom** (Stereo, Loop closing is **OFF**)
 - **Visual Odometry**: (Our visual odometry based on AIR-VO, with SP and SG)
 
-## Evaluation
+## Evaluation on Stereo Sequences
+
+| Sequence | Length (s) |ORB-SLAM3 odom | AIR-VO |
+|---------|:-----:|:-----:|:------:|
+|   **Sequence 0**|   34 |0.114   |   **0.031**   |
+|   **Sequence 1**|   32 | 0.104  |    **0.068**  |
+|   **Sequence 2**|   33 |0.217   |   **0.177**   |
+|   **Sequence 3**|   62 | <FONT COLOR="#ff0000">Fail</FONT>  |   **0.124**   |
+|   **Sequence 4**|   76 | <FONT COLOR="#ff0000">Fail</FONT>  |    **0.893**  |
+|   **Sequence 5**|   21 | <FONT COLOR="#ff0000">Fail</FONT>  |   **0.067**   |
+|   **Sequence 6**|   32 | **0.114**  |    0.304  |
+
+: **RMSE_ERROR**
+
+![RMSE](meta/RMSE.png){width=720 height=302}
+
+
+===================================================================================
+
 | Sequence | Length (s) |ORB-SLAM3 odom | AIR-VO |
 |---------|:-----:|:-----:|:------:|
 |   **Sequence 0**| 34 |   1.11  |   **0.43**   |
 |   **Sequence 1**| 32 |   1.02  |    **0.64**  |
 |   **Sequence 2**| 33 |   2.44  |    **1.94**  |
-|   **Sequence 3**| 62 |   -  |     **1.36** |
-|   **Sequence 4**| 76 |   -  |   **11.19**   |
-|   **Sequence 5**| 21 |    - |     **0.52** |
+|   **Sequence 3**| 62 |   <FONT COLOR="#ff0000">Fail</FONT>  |     **1.36** |
+|   **Sequence 4**| 76 |   <FONT COLOR="#ff0000">Fail</FONT>  |   **11.19**   |
+|   **Sequence 5**| 21 |    <FONT COLOR="#ff0000">Fail</FONT> |     **0.52** |
 |   **Sequence 6**| 32 |   **1.01**  |    2.60  |
 
 : **MAX_ERROR**
+
+![Max Error along the trajectory](meta/Max_error.png){width=720 height=302}
 
 ===================================================================================
 
@@ -44,28 +64,29 @@ ChArUco board are seen at the start and the end of testing videos, i.e. we will 
 |   **Sequence 0**|   34 | 0.019  |    **0.007** |
 |   **Sequence 1**|   32 | 0.015  |   **0.0132**  |
 |   **Sequence 2**|   33 | 0.025  |   **0.024**   |
-|   **Sequence 3**|   62 | -  |    **0.0217**  |
-|   **Sequence 4**|   76 | -  |    **0.077**  |
-|   **Sequence 5**|   21 | -  |   **0.017**   |
+|   **Sequence 3**|   62 | <FONT COLOR="#ff0000">Fail</FONT>  |    **0.0217**  |
+|   **Sequence 4**|   76 | <FONT COLOR="#ff0000">Fail</FONT>  |    **0.077**  |
+|   **Sequence 5**|   21 | <FONT COLOR="#ff0000">Fail</FONT>  |   **0.017**   |
 |   **Sequence 6**|   32 |**0.0177**   |    0.041  |
 
 : **MEAN_ERROR**
 
-===================================================================================
+![Mean Error](meta/Mean_error.png){width=720 height=302}
 
-| Sequence | Length (s) |ORB-SLAM3 odom | AIR-VO |
-|---------|:-----:|:-----:|:------:|
-|   **Sequence 0**|   34 |0.114   |   **0.031**   |
-|   **Sequence 1**|   32 | 0.104  |    **0.068**  |
-|   **Sequence 2**|   33 |0.217   |   **0.177**   |
-|   **Sequence 3**|   62 | -  |   **0.124**   |
-|   **Sequence 4**|   76 | -  |    **0.893**  |
-|   **Sequence 5**|   21 | -  |   **0.067**   |
-|   **Sequence 6**|   32 | **0.114**  |    0.304  |
-
-: **RMSE_ERROR**
 
 ===================================================================================
+
+## Plots and trajectories from the sequences:
+![AIR_VO & ORB_SLAM3 Test on Sequence 4](meta/Sequence4.mp4){width=720 height=302}
+
+===================================================================================
+
+![Trajectory Comparison between ORB_SLAM3 & AIR_VO on Sequence 1: GT exists only at start and end!](meta/traj.png){width=720 height=302}
+
+===================================================================================
+
+
+## Evaluation on Monocular Sequences
 
 ## Notes on the results
 
